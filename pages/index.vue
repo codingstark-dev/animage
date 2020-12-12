@@ -130,10 +130,11 @@ export default {
       "mob psycho",
       "demon slayer",
       "fireforce",
+      "one punch",
       "seven deadly sins",
       "My hero Academia",
-      "one punch",
     ];
+    console.log(ListImage[number]);
     const urlData = await $axios.$get(
       `https://image-scrape.vercel.app/ser/y/"${ListImage[number]}" "wallpaper"`
     );
