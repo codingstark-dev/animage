@@ -1,6 +1,7 @@
 <template>
   <section class="w-full flex-none -ml-full ">
-    <div class="box pt-6">
+
+    <div class="box ">
       <div class="box-wrapper p-4">
         <div class=" rounded flex items-center w-full p-3 shadow-sm border border-gray-200">
           <button
@@ -22,8 +23,9 @@
             name=""
             id=""
             autocomplete="on"
-            @keydown.enter="$router.push({ path: 'wallpaper', query: { key: SearchData,s:ServerType,d:DateType,i:ImageType } })"
+            @keyup.enter="$router.push({ path: 'wallpaper', query: { key: SearchData,s:ServerType,d:DateType,i:ImageType } })"
             placeholder="Search Wallpaper Here"
+            v-on:keyup.enter="$router.push({ path: 'wallpaper', query: { key: SearchData,s:ServerType,d:DateType,i:ImageType } })"
             v-model="SearchData"
             class="w-full pl-4 text-sm outline-none  focus:outline-none bg-transparents"
           >
