@@ -1,6 +1,6 @@
 <template>
   <a href="/">
-    <div class="flex justify-center items-center pt-5 NuxtLogo"> <svg
+    <div class="flex justify-center items-center NuxtLogo"> <svg
         xmlns="http://www.w3.org/2000/svg"
         class="w-10 text-center justify-center items-center text-gray-800"
         xmlns:xlink="http://www.w3.org/1999/xlink"

@@ -3,8 +3,9 @@
   <footer class="bg-gray-800 text-gray-300 px-6 lg:px-8 py-6">
     <div class="max-w-screen-xl mx-auto ">
       <div>
+        <p class="text-center font-black font-mono text-gray-500 pb-2">V1.1</p>
         <logo></logo>
-        <p class="text-center font-black font-mono text-gray-500">Yo Whatsupp.</p>
+        <p class="text-center font-black font-mono text-gray-500">Yo Whatsupp. This Website Currently Under Development, So Any Issue Or A Bug If You Find Mail Me. </p>
       </div>
 
     </div>
