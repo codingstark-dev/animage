@@ -34,10 +34,10 @@
               v-model="DateType"
               class="text-sm w-12  outline-none focus:outline-none bg-transparent"
             >
-              <option value="Day">Day</option>
-              <option value="Month">Month</option>
+              <option value="d">Day</option>
+              <option value="m">Month</option>
               <option
-                value="Year"
+                value="y"
                 selected
               >Year</option>
             </select>
@@ -106,7 +106,7 @@
 export default {
   data() {
     return {
-      DateType: "Year",
+      DateType: "y",
       ServerType: "All",
       ImageType: "hd wallpaper",
       SearchData: null,
