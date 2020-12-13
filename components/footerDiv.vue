@@ -5,7 +5,7 @@
       <div>
         <p class="text-center font-black font-mono text-gray-500 pb-2">V1.1</p>
         <logo></logo>
-        <p class="text-center font-black font-mono text-gray-500">Yo Whatsupp. This Website Currently Under Development, So Any Issue Or A Bug If You Find Mail Me. </p>
+        <p class="text-center font-black font-mono text-gray-500">Hello Peoples. This Website Currently Under Development, So Any Issue You Faced Report Me On My Mail. </p>
       </div>
 
     </div>
@@ -62,7 +62,11 @@
         </a>
       </div>
       <div class="text-sm mt-4">
-        Made With <span class="text-red-500 text-2xl">♥</span> By Himanshu Maurya
+        Made With <span class="text-red-500 text-2xl">♥</span> By <a
+          href="https://codingstark.com/portfolio"
+          class="font-bold"
+          target="_blank"
+        > Himanshu Maurya</a>
       </div>
     </div>
   </footer>
