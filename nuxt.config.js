@@ -4,6 +4,10 @@ export default {
   head: {
     title: "Animage A Wallpaper Site",
     meta: [
+      {
+        name: "google-site-verification",
+        content: "7oSYu2Wy2R6yy7vjxfba2kxlKSNawBPL4hPFFZxHVVQ"
+      },
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
