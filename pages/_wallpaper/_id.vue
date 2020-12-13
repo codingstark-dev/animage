@@ -110,13 +110,9 @@
 export default {
   data() {
     return {
-      DateType: "Year",
-      ServerType: "All",
-      ImageType: "hd wallpaper",
-      SearchData: null,
+      urlData: null,
     };
   },
-
   async asyncData({
     $axios,
     isDev,
@@ -131,24 +127,21 @@ export default {
     error,
   }) {
     if (query.s == "Reddit" || query.s == "Wallpapercave") {
-      const urlData = await $axios.$get(
+      const Data = await $axios.$get(
         `https://image-scrape.vercel.app/ser/${query.d}/site:${query.s}.com ${query.key} "${query.i}"`
       );
-
+      console.log(query.d, query.s, query.i, query.key);
       return {
-        urlData,
-        DateType: query.d,
-        ServerType: query.s,
-        ImageType: query.i,
-        SearchData: query.key,
+        urlData: Data,
       };
     } else {
-      const urlData = await $axios.$get(
+      console.log(query.d, query.s, query.i, query.key);
+      const Data = await $axios.$get(
         `https://image-scrape.vercel.app/ser/${query.d}/${query.key} "${query.i}"`
       );
 
       return {
-        urlData,
+        urlData: Data,
       };
     }
   },
