@@ -142,18 +142,17 @@ export default {
       "My hero Academia",
       "Promised Neverland",
       "Boruto",
-      "Death Note",
       "Dr stone",
       "Dororo",
       "Attack on titan",
       "jujutsu kaisen",
       "Fate Stay night",
     ];
-
+    store.commit("image/randomNumber", ListImage.length);
     store.commit("image/removeImage");
     const urlData = await $axios.$get(
       `https://image-scrape.vercel.app/ser/y/"${
-        ListImage[Math.floor(Math.random() * ListImage.length)]
+        ListImage[store.state.image.rn]
       }" "wallpaper"`
     );
 

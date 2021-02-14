@@ -1,5 +1,6 @@
 export const state = () => ({
-  list: []
+  list: [],
+  rn: 0
 });
 
 export const mutations = {
@@ -8,5 +9,8 @@ export const mutations = {
   },
   removeImage(state) {
     state.list = [];
+  },
+  randomNumber(state,lenghtarr) {
+    state.rn = Math.floor(Math.random() * lenghtarr);
   }
 };
