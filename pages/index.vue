@@ -73,7 +73,7 @@
       </div>
     </div>
     <div
-      v-if="urlData !== null && urlData !== undefined"
+      v-if="images !== null && images !== undefined"
       class="p-10"
     >
       <client-only>
@@ -84,7 +84,7 @@
           monitor-images-loaded
         >
           <stack-item
-            v-for="(item, i) in urlData['results']"
+            v-for="(item, i) in images['results']"
             :key="i"
             style="transition: transform 200ms"
           >
@@ -103,6 +103,24 @@
   </section>
 </template>
 <script>
+let number = Math.floor(Math.random() * 14);
+let ListImage = [
+  "Naruto",
+  "Black Clover",
+  "mob psycho",
+  "demon slayer",
+  "fireforce",
+  "one punch",
+  "seven deadly sins",
+  "My hero Academia",
+  "Promised Neverland",
+  "Boruto",
+  "Death Note",
+  "Dr stone",
+  "Dororo",
+  "Attack on titan",
+  "jujutsu kaisen",
+];
 export default {
   data() {
     return {
@@ -111,6 +129,11 @@ export default {
       ImageType: "hd wallpaper",
       SearchData: null,
     };
+  },
+  computed: {
+    images() {
+      return this.$store.state.image.list[0];
+    },
   },
   async asyncData({
     $axios,
@@ -125,24 +148,12 @@ export default {
     redirect,
     error,
   }) {
-    let number = Math.floor(Math.random() * 8);
-    let ListImage = [
-      "Naruto",
-      "Black Clover",
-      "mob psycho",
-      "demon slayer",
-      "fireforce",
-      "one punch",
-      "seven deadly sins",
-      "My hero Academia",
-    ];
     console.log(ListImage[number]);
     const urlData = await $axios.$get(
       `https://image-scrape.vercel.app/ser/y/"${ListImage[number]}" "wallpaper"`
     );
-    return {
-      urlData,
-    };
+    store.commit("image/removeImage");
+    store.commit("image/add", urlData);
   },
 };
 </script>

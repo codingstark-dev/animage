@@ -3,7 +3,7 @@
   <footer class="bg-gray-800 text-gray-300 px-6 lg:px-8 py-6">
     <div class="max-w-screen-xl mx-auto ">
       <div>
-        <p class="text-center font-black font-mono text-gray-500 pb-2">V1.1</p>
+        <p class="text-center font-black font-mono text-gray-500 pb-2">V1.2</p>
         <logo></logo>
         <p class="text-center font-black font-mono text-gray-500">Hello Peoples. This Website Currently Under Development, So Any Issue You Faced Report Me On My Mail. </p>
       </div>

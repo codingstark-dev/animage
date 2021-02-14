@@ -72,7 +72,7 @@
       </div>
     </div> -->
     <div
-      v-if="urlData !== null && urlData !== undefined"
+      v-if="images !== null && images !== undefined"
       class="p-10"
     >
       <client-only>
@@ -83,7 +83,7 @@
           monitor-images-loaded
         >
           <stack-item
-            v-for="(item, i) in urlData['results']"
+            v-for="(item, i) in images['results']"
             :key="i"
             style="transition: transform 200ms"
           >
@@ -113,6 +113,11 @@ export default {
       urlData: null,
     };
   },
+  computed: {
+    images() {
+      return this.$store.state.image.list[0];
+    },
+  },
   async asyncData({
     $axios,
     isDev,
@@ -131,18 +136,21 @@ export default {
         `https://image-scrape.vercel.app/ser/${query.d}/site:${query.s}.com ${query.key} "${query.i}"`
       );
       console.log(query.d, query.s, query.i, query.key);
-      return {
-        urlData: Data,
-      };
+      store.commit("image/removeImage");
+      store.commit("image/add", Data);
+      // return {
+      //   urlData: Data,
+      // };
     } else {
       console.log(query.d, query.s, query.i, query.key);
       const Data = await $axios.$get(
         `https://image-scrape.vercel.app/ser/${query.d}/${query.key} "${query.i}"`
       );
-
-      return {
-        urlData: Data,
-      };
+      store.commit("image/removeImage");
+      store.commit("image/add", Data);
+      // return {
+      //   urlData: Data,
+      // };
     }
   },
 };
