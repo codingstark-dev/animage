@@ -10,7 +10,8 @@ export const mutations = {
   removeImage(state) {
     state.list = [];
   },
-  randomNumber(state,lenghtarr) {
+  randomNumber(state, lenghtarr) {
+    state.rn = 1;
     state.rn = Math.floor(Math.random() * lenghtarr);
   }
 };
