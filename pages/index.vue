@@ -103,6 +103,26 @@
   </section>
 </template>
 <script>
+let ListImage = [
+  "Naruto",
+  "Black Clover",
+  "mob psycho",
+  "demon slayer",
+  "fireforce",
+  "one punch",
+  "seven deadly sins",
+  "My hero Academia",
+  "Promised Neverland",
+  "Boruto",
+  "Death Note",
+  "Dr stone",
+  "Dororo",
+  "Attack on titan",
+  "jujutsu kaisen",
+  "Fate Stay night",
+];
+let randomNumber = Math.floor(Math.random() * ListImage.length);
+console.log(ListImage[randomNumber]);
 export default {
   data() {
     return {
@@ -131,30 +151,11 @@ export default {
     redirect,
     error,
   }) {
-    let ListImage = [
-      "Naruto",
-      "Black Clover",
-      "mob psycho",
-      "demon slayer",
-      "fireforce",
-      "one punch",
-      "seven deadly sins",
-      "My hero Academia",
-      "Promised Neverland",
-      "Boruto",
-      "Death Note",
-      "Dr stone",
-      "Dororo",
-      "Attack on titan",
-      "jujutsu kaisen",
-      "Fate Stay night",
-    ];
-    let randomNumber = Math.floor(Math.random() * ListImage.length);
-    console.log(ListImage[randomNumber]);
+    store.commit("image/removeImage");
     const urlData = await $axios.$get(
       `https://image-scrape.vercel.app/ser/y/"${ListImage[randomNumber]}" "wallpaper"`
     );
-    store.commit("image/removeImage");
+
     store.commit("image/add", urlData);
   },
 };
